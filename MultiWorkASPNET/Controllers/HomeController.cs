@@ -24,22 +24,22 @@ namespace MultiWorkASPNET.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult NewPageIndex(ImageAndDescriptionModel imageContentDto)
+        public IActionResult NewPageIndex(ImageAndDescriptionModel imageAndDescriptionModel)
         {
-            if (imageContentDto.Image != null)
+            if (imageAndDescriptionModel.Image != null)
             {
                 // Получение массива байтов изображения
                 byte[] imageData;
                 using (var memoryStream = new MemoryStream())
                 {
-                    imageContentDto.Image.CopyTo(memoryStream);
+                    imageAndDescriptionModel.Image.CopyTo(memoryStream);
                     imageData = memoryStream.ToArray();
                 }
 
                 // Установка массива байтов в модели
-                imageContentDto.ImageData = imageData;
+                imageAndDescriptionModel.ImageData = imageData;
             }
-            return View(imageContentDto);
+            return View(imageAndDescriptionModel);
         }
 
         public IActionResult Privacy()
