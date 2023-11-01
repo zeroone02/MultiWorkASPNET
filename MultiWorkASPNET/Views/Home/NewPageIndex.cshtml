@@ -1,0 +1,8 @@
+﻿@model ImageAndDescriptionModel
+<div class="container border p-3">
+<p>@Model.Description</p>
+<div/>
+
+<img src="data:image/png;base64,@Convert.ToBase64String(Model.ImageData)" alt="Изображение">
+
+<img src="data:image/png;base64,@Convert.ToBase64String(Model.ImageData)" alt="Изображение" width="128px" height="128px">

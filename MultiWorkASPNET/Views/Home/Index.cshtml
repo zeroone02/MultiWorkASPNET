@@ -1,0 +1,24 @@
+﻿@model ImageAndDescriptionModel
+<h1>Заполните поля</h1>
+<form asp-action="NewPageIndex" method="post" enctype="multipart/form-data">
+    <div class="container border p-3">
+        <div class="col-2">
+            <label class="control-label pt-2 " style="font-size:40px large;">Описание изображения</label>
+        </div>
+
+        <div class="col-10 pb-3">
+            <textarea asp-for="Description" class="form-control" rows="5" required></textarea>
+        </div>
+
+        <div class="col-2">
+            <label class="control-label pt-2" style="font-size:20px large;">Image</label>
+        </div>
+        <div class="col-10 pb-3">
+            <input asp-for="Image" class="form-control" required />
+        </div>
+
+        <div class="col-5">
+            <input type="submit" value="Create" class="btn btn-success form-control" />
+        </div>
+    </div>
+</form>
